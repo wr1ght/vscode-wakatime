@@ -255,12 +255,9 @@ export class WakaTime {
       if (doc) {
         let file: string = doc.fileName;
         if (file) {
-          let time: number = Date.now();
-          if (isWrite || this.enoughTimePassed(time) || this.lastFile !== file) {
             this.sendHeartbeat(file, isWrite);
             this.lastFile = file;
             this.lastHeartbeat = time;
-          }
         }
       }
     }
